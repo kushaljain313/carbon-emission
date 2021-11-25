@@ -13,9 +13,9 @@ ReactDOM.render(
     <Box
       sx={{
         display: "flex",
-        flexDirection: "row",
-        flexWrap: "nowrap",
-        justifyContent: "flex-start",
+        // flexDirection: "row",
+        // flexWrap: "nowrap",
+        // justifyContent: "flex-start",
       }}
     >
       {" "}

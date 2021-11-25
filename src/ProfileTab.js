@@ -52,13 +52,14 @@ export default function ProfileTabs() {
     <Box
       sx={{
         flexGrow: 1,
-        bgcolor: "background.paper",
+        bgcolor: "#3D2CA7",
         display: "flex",
         flexDirection: "column",
         flexWrap: "wrap",
         width: "100px",
         height: 924,
         textAlign: "center",
+        color: "#fff",
       }}
     >
       <Typography
@@ -66,10 +67,10 @@ export default function ProfileTabs() {
         noWrap
         component="div"
         sx={{
-          display: { xs: "none", sm: "block" },
+          // display: { xs: "none", sm: "block" },
+          display: "flex",
           textAlign: "center",
           height: "100px",
-          display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
           alignItems: "center",
@@ -83,18 +84,22 @@ export default function ProfileTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        textColor="secondary"
         indicatorColor="primary"
+        textColor="inherit"
         sx={{ borderRight: 3, borderColor: "divider" }}
       >
+        <Tab icon={<PersonPinIcon />} label="Dashboard" {...a11yProps(0)} />
         <Tab
-          icon={<PersonPinIcon color="secondary" />}
-          color="secondary"
-          label="Dashboard"
-          {...a11yProps(0)}
+          label="Carbon Footprint"
+          icon={<PersonPinIcon />}
+          {...a11yProps(1)}
         />
-        <Tab label="Emissions" icon={<PersonPinIcon />} {...a11yProps(1)} />
-        <Tab icon={<PersonPinIcon />} label="Profile" {...a11yProps(2)} />
+        <Tab
+          icon={<PersonPinIcon />}
+          color="primary"
+          label="Profile"
+          {...a11yProps(2)}
+        />
         <Tab icon={<PersonPinIcon />} label="Settings" {...a11yProps(3)} />
         <Tab icon={<PersonPinIcon />} label="Item Five" {...a11yProps(4)} />
         <Tab icon={<PersonPinIcon />} label="Item Six" {...a11yProps(5)} />
@@ -104,7 +109,7 @@ export default function ProfileTabs() {
         <Tab icon={<PersonPinIcon />} label="Item Ten" {...a11yProps(9)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <h1 style={{ marginTop: "100px" }}>Dashboard</h1>
+        <h1 style={{ marginTop: "100px", color: "black" }}>Dashboard</h1>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <IconLabelTabs />

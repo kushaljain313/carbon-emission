@@ -4,7 +4,6 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
@@ -17,6 +16,11 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import TimePicker from "@mui/lab/TimePicker";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -70,6 +74,8 @@ const darkTheme = createTheme({
 });
 
 export default function PrimarySearchAppBar() {
+  const [value, setValue] = React.useState(null);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -214,6 +220,23 @@ export default function PrimarySearchAppBar() {
                   inputProps={{ "aria-label": "search" }}
                   sx={{ border: 1, borderColor: "blue" }}
                 />
+                {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <TimePicker
+                    label="Time Frame"
+                    value={value}
+                    onChange={(newValue) => {
+                      setValue(newValue);
+                    }}
+                    sx={{ height: "3px" }}
+                    renderInput={(params) => (
+                      <TextField
+                        placeholder="Time Frame"
+                        sx={{ border: 1, borderColor: "blue" }}
+                        {...params}
+                      />
+                    )}
+                  />
+                </LocalizationProvider> */}
               </Search>
               <Search>
                 <SearchIconWrapper>
