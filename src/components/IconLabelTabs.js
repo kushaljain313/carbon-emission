@@ -7,6 +7,9 @@ import PersonPinIcon from "@mui/icons-material/PersonPin";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
+import Form from "./Form";
+
+import TravelPage from "../pages/TravelPage";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,7 +55,7 @@ export default function IconLabelTabs() {
       sx={{
         flexGrow: 1,
         bgcolor: "#3D2CA7",
-        height: 400,
+        height: 120,
         marginTop: "100px",
         maxWidth: 1100,
       }}
@@ -149,7 +152,7 @@ export default function IconLabelTabs() {
       </Tabs>
 
       <TabPanel value={value} index={0}>
-        Buisiness Travel
+        <TravelPage label = "Travel" />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Real Estate
